@@ -25,9 +25,14 @@ BuildRequires:	cmake(Qt%{major}Widgets)
 BuildRequires:	cmake(Qt%{major}Quick)
 BuildRequires:	cmake(Qt%{major}Network)
 BuildRequires:	cmake(Qt%{major}Svg)
+BuildRequires:	cmake(Qt%{major}Test)
+BuildRequires:	cmake(Qt%{major}OpenGL)
 BuildRequires:	cmake(Qt%{major}Qml)
+BuildRequires:	cmake(Qt%{major}Quick)
 BuildRequires:	cmake(Qt%{major}QuickTest)
 BuildRequires:	qt%{major}-cmake
+BuildRequires:	pkgconfig(egl)
+BuildRequires:	pkgconfig(glesv2)
 License:	LGPLv3/GPLv3/GPLv2
 
 %description
