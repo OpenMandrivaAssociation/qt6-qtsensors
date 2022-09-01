@@ -1,4 +1,4 @@
-%define beta beta3
+%define beta beta4
 #define snapshot 20200627
 %define major 6
 
@@ -70,7 +70,8 @@ Examples for the Qt %{major} Sensors module
 %cmake -G Ninja \
 	-DCMAKE_INSTALL_PREFIX=%{_qtdir} \
 	-DQT_BUILD_EXAMPLES:BOOL=ON \
-	-DQT_WILL_INSTALL:BOOL=ON
+	-DQT_WILL_INSTALL:BOOL=ON \
+	-DBUILD_WITH_PCH:BOOL=OFF
 
 %build
 export LD_LIBRARY_PATH="$(pwd)/build/lib:${LD_LIBRARY_PATH}"
