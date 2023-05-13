@@ -6,7 +6,7 @@
 
 Name:		qt6-qtsensors
 Version:	6.5.0
-Release:	%{?beta:0.%{beta}.1}%{?snapshot:1.%{snapshot}.}1
+Release:	%{?beta:0.%{beta}.1}%{?snapshot:0.%{snapshot}.}2
 %if 0%{?snapshot:1}
 # "git archive"-d from "dev" branch of git://code.qt.io/qt/qtbase.git
 Source:		qtsensors-%{?snapshot:%{snapshot}}%{!?snapshot:%{version}}.tar.zst
@@ -61,12 +61,10 @@ Group: Development/KDE and Qt
 Examples for the Qt %{major} Sensors module
 
 %files examples
-#{_qtdir}/examples/sensors
+%{_qtdir}/examples/sensors
 
 %prep
 %autosetup -p1 -n qtsensors%{!?snapshot:-everywhere-src-%{version}%{?beta:-%{beta}}}
-# FIXME why are OpenGL lib paths autodetected incorrectly, preferring
-# /usr/lib over /usr/lib64 even on 64-bit boxes?
 %cmake -G Ninja \
 	-DCMAKE_INSTALL_PREFIX=%{_qtdir} \
 	-DQT_BUILD_EXAMPLES:BOOL=ON \
@@ -79,3 +77,4 @@ export LD_LIBRARY_PATH="$(pwd)/build/lib:${LD_LIBRARY_PATH}"
 
 %install
 %ninja_install -C build
+%qt6_postinstall
