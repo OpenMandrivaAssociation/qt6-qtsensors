@@ -1,11 +1,11 @@
-#define beta rc
+%define beta beta1
 #define snapshot 20200627
 %define major 6
 
 %define _qtdir %{_libdir}/qt%{major}
 
 Name:		qt6-qtsensors
-Version:	6.5.1
+Version:	6.6.0
 Release:	%{?beta:0.%{beta}.1}%{?snapshot:0.%{snapshot}.}1
 %if 0%{?snapshot:1}
 # "git archive"-d from "dev" branch of git://code.qt.io/qt/qtbase.git
@@ -40,7 +40,6 @@ Qt %{major} sensor module
 
 %global extra_files_Sensors \
 %dir %{_qtdir}/plugins/sensors \
-%{_qtdir}/plugins/sensors/libqtsensors_dummy.so \
 %{_qtdir}/plugins/sensors/libqtsensors_generic.so \
 %{_qtdir}/plugins/sensors/libqtsensors_iio-sensor-proxy.so \
 %{_qtdir}/qml/QtSensors
