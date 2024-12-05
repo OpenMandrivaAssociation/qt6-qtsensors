@@ -5,7 +5,7 @@
 %define _qtdir %{_libdir}/qt%{major}
 
 Name:		qt6-qtsensors
-Version:	6.8.0
+Version:	6.8.1
 Release:	%{?beta:0.%{beta}.}%{?snapshot:0.%{snapshot}.}1
 %if 0%{?snapshot:1}
 # "git archive"-d from "dev" branch of git://code.qt.io/qt/qtbase.git
@@ -45,7 +45,8 @@ Qt %{major} sensor module
 %{_qtdir}/qml/QtSensors
 
 %global extra_devel_files_Sensors \
-%{_qtdir}/lib/cmake/Qt6/FindSensorfw.cmake
+%{_qtdir}/lib/cmake/Qt6/FindSensorfw.cmake \
+%{_qtdir}/sbom/*
 
 %global extra_devel_files_SensorsQuick \
 %{_qtdir}/lib/cmake/Qt6Qml/QmlPlugins/Qt6SensorsQuickplugin*.cmake
