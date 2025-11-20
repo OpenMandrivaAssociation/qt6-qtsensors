@@ -5,7 +5,7 @@
 %define _qtdir %{_libdir}/qt%{major}
 
 Name:		qt6-qtsensors
-Version:	6.10.0
+Version:	6.10.1
 Release:	%{?beta:0.%{beta}.}%{?snapshot:0.%{snapshot}.}1
 %if 0%{?snapshot:1}
 # "git archive"-d from "dev" branch of git://code.qt.io/qt/qtbase.git
@@ -28,6 +28,7 @@ BuildRequires:	cmake(Qt%{major}Svg)
 BuildRequires:	cmake(Qt%{major}Test)
 BuildRequires:	cmake(Qt%{major}OpenGL)
 BuildRequires:	cmake(Qt%{major}Qml)
+BuildRequires:	cmake(Qt%{major}QmlMeta)
 BuildRequires:	cmake(Qt%{major}Quick)
 BuildRequires:	cmake(Qt%{major}QuickTest)
 BuildRequires:	qt%{major}-cmake
